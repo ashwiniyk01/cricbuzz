@@ -12,7 +12,7 @@ public class CricbuzzScorecard {
 	@FindBy(xpath = "//div[starts-with(@id,'innings_1')]/div[1]//div[contains(@class,'cb-col cb-col-8 text-right text-bold')]")
 	private List<WebElement> batsmentRunElements;
 
-	@FindBy(xpath = "//div[starts-with(@id,'innings_1')]/div[1]//div[@class='cb-col cb-col-8 text-right']")
+	@FindBy(xpath = "//div[starts-with(@id,'innings_1')]/div[1]//div[@class='cb-col cb-col-100 cb-scrd-itms']/div[5]")
 	private List<WebElement> batsmentBoundriesElement;
 
 	@FindBy(xpath = "//div[starts-with(@id,'innings_1')]/div[1]//div[@class='cb-col cb-col-8 text-bold cb-text-black text-right']")
