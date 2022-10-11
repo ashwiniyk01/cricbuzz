@@ -3,6 +3,7 @@ package com.flowace.main;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,7 +24,7 @@ public class BaseClass {
 
 		driver.manage().window().maximize();
 
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
 	}
 
 	public void initializeProperties() throws IOException {
