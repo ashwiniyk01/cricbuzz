@@ -38,13 +38,9 @@ public class ScorecardTest extends BaseClass {
 	@Test(priority = 1)
 	public void totalScoreOfEachBatsment() {
 		List<WebElement> runElements = scorecard.getBatsmentRunElements();
-
 		for (int i = 1; i <= 8; i++) {
-
 			totalOfSrilankanBatsmen += Integer.parseInt(runElements.get(i).getText());
-
 		}
-		System.out.println(totalOfSrilankanBatsmen);
 	}
 
 	@Test(priority = 3)
@@ -57,11 +53,8 @@ public class ScorecardTest extends BaseClass {
 	@Test(priority = 2)
 	public void totalBoundriesBySrilankanTeam() {
 		List<WebElement> boundryElements = scorecard.getBatsmentBoundriesElement();
-
 		for (int i = 1; i <= 8; i++) {
-
 			totalBoundriesOfSrilankanBatsmen += Integer.parseInt(boundryElements.get(i).getText());
-
 		}
 		System.out.println(totalBoundriesOfSrilankanBatsmen);
 	}
