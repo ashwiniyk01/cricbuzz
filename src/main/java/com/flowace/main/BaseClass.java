@@ -31,6 +31,7 @@ public class BaseClass {
 		try {
 			ClassLoader loader = Thread.currentThread().getContextClassLoader();
 			inputStream = loader.getResourceAsStream("configuration.properties");
+			props = new Properties();
 			props.load(inputStream);
 		} finally {
 			if (inputStream != null) {
