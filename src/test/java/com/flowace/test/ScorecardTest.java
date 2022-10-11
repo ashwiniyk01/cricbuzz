@@ -19,8 +19,8 @@ public class ScorecardTest extends BaseClass {
 
 	private CricbuzzHomepage homepage;
 	private CricbuzzScorecard scorecard;
-	private static Integer totalOfSrilankanBatsmen = 0;
-	private static Integer totalBoundriesOfSrilankanBatsmen = 0;
+	private static int totalOfSrilankanBatsmen = 0;
+	private static int totalBoundriesOfSrilankanBatsmen = 0;
 
 	@BeforeClass
 	public void initialize() throws InterruptedException, IOException {
@@ -41,6 +41,7 @@ public class ScorecardTest extends BaseClass {
 		for (int i = 1; i <= 8; i++) {
 			totalOfSrilankanBatsmen += Integer.parseInt(runElements.get(i).getText());
 		}
+		assertEquals(totalOfSrilankanBatsmen, 262);
 	}
 
 	@Test(priority = 3)
@@ -53,10 +54,10 @@ public class ScorecardTest extends BaseClass {
 	@Test(priority = 2)
 	public void totalBoundriesBySrilankanTeam() {
 		List<WebElement> boundryElements = scorecard.getBatsmentBoundriesElement();
-		for (int i = 1; i <= 8; i++) {
-			totalBoundriesOfSrilankanBatsmen += Integer.parseInt(boundryElements.get(i).getText());
+		for (WebElement boundryElement : boundryElements) {
+			totalBoundriesOfSrilankanBatsmen += Integer.parseInt(boundryElement.getText());
 		}
-		System.out.println(totalBoundriesOfSrilankanBatsmen);
+		assertEquals(totalBoundriesOfSrilankanBatsmen, 27);
 	}
 
 	@Test(priority = 4)
